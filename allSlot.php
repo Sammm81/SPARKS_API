@@ -13,7 +13,7 @@ if($sql)
         array_push( $result, array(
             'id' => $row['id'],
             'area_id' => $row['area_id'],
-            'name' => $row['name'],
+            'name' => $row['place_name'],
             'book' => $row['book'],
             'available' => $row['available']
         ));

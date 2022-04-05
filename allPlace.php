@@ -12,7 +12,7 @@ if($sql)
     {
         array_push( $result, array(
             'id' => $row['id'],
-            'name' => $row['name'],
+            'name' => $row['place_name'],
             'full' => $row['full']
         ));
     }
