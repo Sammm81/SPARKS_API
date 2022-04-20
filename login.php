@@ -1,22 +1,17 @@
 <?php
 require_once('conn.php');
+require_once('helper.php');
 
-$query = "SELECT * FROM place";
+$email = $_POST["email"];
+$password = md5($_POST["password"]);
+
+$query = "SELECT * FROM users WHERE email='$email' AND password='$password'";
 
 $sql = mysqli_query($db_connect, $query);
 
 if($sql)
 {
-    $result = array();
-    while ($row = mysqli_fetch_array($sql))
-    {
-        array_push( $result, array(
-            'id' => $row['id'],
-            'name' => $row['place_name'],
-            'full' => $row['full']
-        ));
-    }
-
+    $result = mysqli_fetch_assoc($sql);
     header('Content-Type: text/json');
     echo json_encode(array('Details' => $result, 'Message' => 'Success'));
 }

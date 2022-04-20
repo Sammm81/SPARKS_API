@@ -13,6 +13,7 @@ $response = array(
 
 if(mysqli_query($db_connect, $query))
 {
+    header('Content-Type: text/json');
     echo json_encode(array('Details' => $response, 'Message' => 'Success'));
 }
 else

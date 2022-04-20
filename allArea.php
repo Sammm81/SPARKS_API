@@ -13,11 +13,12 @@ if($sql)
         array_push( $result, array(
             'id' => $row['id'],
             'place_id' => $row['place_id'],
-            'name' => $row['name'],
+            'name' => $row['area_name'],
             'full' => $row['full']
         ));
     }
 
+    header('Content-Type: text/json');
     echo json_encode(array('Details' => $result, 'Message' => 'Success'));
 }
 else

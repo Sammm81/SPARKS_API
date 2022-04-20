@@ -12,11 +12,13 @@ $query = "INSERT INTO users (id, name, email, password) VALUES ('$id', '$name', 
 $response = array(
     "id"=>$id,
     "name"=>$name,
-    "email"=>$email
+    "email"=>$email,
+    "password" =>$password
 );
 
 if(mysqli_query($db_connect, $query))
 {
+    header('Content-Type: text/json');
     echo json_encode(array('Details' => $response, 'Message' => 'Success'));
 
 }

@@ -1,7 +1,7 @@
 <?php
 require_once('conn.php');
 
-$id = $_GET['id'];
+$id = $_POST['id'];
 
 $query = "SELECT * FROM users where id='$id'";
 
@@ -10,6 +10,7 @@ $sql = mysqli_query($db_connect, $query);
 if($sql)
 {
     $result = mysqli_fetch_assoc($sql);
+    header('Content-Type: text/json');
     echo json_encode(array('Details' => $result, 'Message' => 'Success'));
 }
 else

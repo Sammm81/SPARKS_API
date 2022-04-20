@@ -22,6 +22,7 @@ if($sql)
         ));
     }
 
+    header('Content-Type: text/json');
     echo json_encode(array('Details' => $result, 'Message' => 'Success'));
 }
 else
