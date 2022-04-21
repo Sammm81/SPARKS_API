@@ -4,9 +4,9 @@ use sparks;
 
 CREATE TABLE users (
     id varchar(10) NOT NULL UNIQUE, 
-    name varchar(20) NOT NULL UNIQUE, 
+    name varchar(20) NOT NULL, 
     email varchar(30) NOT NULL UNIQUE, 
-    password varchar(500) NOT NULL UNIQUE, 
+    password varchar(500) NOT NULL, 
     admin bool DEFAULT 0 NOT NULL, 
     balance bigint DEFAULT 0 NOT NULL, 
     PRIMARY KEY (id)
@@ -14,7 +14,7 @@ CREATE TABLE users (
 
 CREATE TABLE place (
     id varchar(10) NOT NULL UNIQUE, 
-    place_name varchar(30) NOT NULL UNIQUE, 
+    place_name varchar(30) NOT NULL, 
     full bool DEFAULT 0 NOT NULL, 
     PRIMARY KEY (ID)
 );
@@ -22,7 +22,7 @@ CREATE TABLE place (
 CREATE TABLE area (
     id varchar(10) NOT NULL UNIQUE, 
     place_id varchar(10) NOT NULL, 
-    area_name varchar(30) NOT NULL UNIQUE, 
+    area_name varchar(30) NOT NULL, 
     full bool DEFAULT 0 NOT NULL, 
     PRIMARY KEY (id), 
     FOREIGN KEY (place_id) REFERENCES place(id)
@@ -31,7 +31,7 @@ CREATE TABLE area (
 CREATE TABLE slot (
     id varchar(10) NOT NULL UNIQUE, 
     area_id varchar(10) NOT NULL, 
-    slot_name varchar(30) NOT NULL UNIQUE, 
+    slot_name varchar(30) NOT NULL, 
     book bool DEFAULT 0 NOT NULL, 
     available bool DEFAULT 1 NOT NULL, 
     PRIMARY KEY (id), 

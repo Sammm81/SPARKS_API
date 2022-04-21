@@ -1,11 +1,12 @@
 <?php
 require_once('conn.php');
+require_once('helper.php');
 
-$id = $_POST['id'];
+$id = getId();
 $place_id = $_POST['place_id'];
 $name = $_POST['name'];
 
-$query = "INSERT INTO area (id, place_id, name) VALUES ('$id', '$place_id', '$name')";
+$query = "INSERT INTO area (id, place_id, area_name) VALUES ('$id', '$place_id', '$name')";
 
 $response = array(
     "id"=>$id,
