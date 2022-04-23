@@ -4,7 +4,7 @@ require_once('conn.php');
 $id = $_POST['id'];
 $paid = $_POST['paid'];
 
-$query = "UPDATE slot SET paid='$paid' WHERE id='$id'";
+$query = "UPDATE payment SET paid='$paid' WHERE id='$id'";
 
 if(mysqli_query($db_connect, $query))
 {

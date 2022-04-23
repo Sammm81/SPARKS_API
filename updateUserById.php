@@ -7,7 +7,7 @@ $email = $_POST["email"];
 $admin = $_POST["admin"];
 $balance = $_POST["balance"];
 
-$query = "UPDATE users SET name='$name', email='$full', admin=$admin, balance=$balance WHERE id='$id'";
+$query = "UPDATE users SET name='$name', email='$email', admin='$admin', balance='$balance' WHERE id='$id'";
 
 if(mysqli_query($db_connect, $query))
 {
