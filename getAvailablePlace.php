@@ -1,8 +1,6 @@
 <?php
 require_once('conn.php');
 
-$place_id = $_POST['place_id'];
-
 $query = "SELECT *  FROM place WHERE full = 0";
 
 $sql = mysqli_query($db_connect, $query);
